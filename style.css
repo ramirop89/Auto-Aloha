@@ -266,3 +266,53 @@ body{font-size:18px;line-height:1.72}
 .modal-kicker{display:block!important;position:relative;top:auto!important;margin:0 0 8px!important;padding-top:0!important;line-height:1.5!important;min-height:15px;visibility:visible!important;opacity:1!important;color:#7d8972!important;letter-spacing:1.6px!important;font-weight:800!important;flex-shrink:0}
 @media(max-width:850px){.modal-body{padding-top:30px!important}}
 @media(max-width:620px){.modal-body{padding-top:25px!important}}
+
+
+/* Mobile luxury polish: refined call icon, consistent vehicle framing, readable fixed call bar. */
+.head-call{display:flex!important;align-items:center!important;gap:12px!important;padding:10px 15px!important;border:1px solid rgba(213,243,109,.28)!important;border-radius:999px!important;background:linear-gradient(145deg,#202722,#111613)!important;box-shadow:0 7px 18px #1112,inset 0 1px #ffffff18!important;color:#f7f4ec!important;min-height:48px!important}
+.head-call-icon{width:31px!important;height:31px!important;display:grid!important;place-items:center!important;flex:0 0 31px!important;border-radius:50%!important;background:linear-gradient(145deg,#dffb88,#b9d85c)!important;box-shadow:0 0 0 3px #d5f36d18!important}
+.head-call-icon svg{width:16px!important;height:16px!important;fill:#1a2118!important;display:block!important}
+.head-call-copy{display:flex!important;flex-direction:column!important;gap:3px!important;line-height:1.1!important}
+.head-call-copy>span{font-size:8px!important;letter-spacing:1.4px!important;font-weight:800!important;color:#d5f36d!important}
+.head-call-copy strong{display:block!important;border:0!important;padding:0!important;font-size:12px!important;letter-spacing:.15px!important;color:#fff!important;white-space:nowrap!important}
+.car-visual{background:#c9c7c2!important;overflow:hidden!important}
+.car-card .car-img{object-fit:contain!important;object-position:center!important;padding:12px 16px!important;width:100%!important;height:100%!important;inset:0!important;transform:none!important;filter:none!important}
+.car-card:hover .car-img{transform:scale(1.02)!important}
+.modal-photo{background:#c9c7c2!important}
+.modal-photo::before,.modal-photo::after{display:none!important;content:none!important}
+.modal-photo img{object-fit:contain!important;object-position:center!important;width:100%!important;height:100%!important;padding:8px!important;filter:drop-shadow(0 12px 14px #0002)!important}
+.sticky-call{min-height:72px!important;padding:10px max(4%,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(4%,env(safe-area-inset-left))!important;gap:12px!important}
+.sticky-call>div{gap:11px!important;min-width:0!important;flex:1 1 48%!important}
+.sticky-call .live-dot{width:9px!important;height:9px!important;flex:0 0 9px!important}
+.sticky-call b{font-size:13px!important;line-height:1.25!important;letter-spacing:0!important;white-space:normal!important}
+.sticky-call small{font-size:12px!important;line-height:1.3!important;margin-top:3px!important;white-space:normal!important}
+.sticky-call>a.sticky-phone{display:flex!important;flex:0 1 49%!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:4px!important;position:relative!important;min-width:0!important;width:auto!important;min-height:54px!important;padding:8px 28px 8px 13px!important;border-radius:3px!important;box-shadow:0 5px 16px #0002!important;letter-spacing:0!important;white-space:nowrap!important}
+.sticky-phone .sticky-label{font-size:9px!important;line-height:1.1!important;letter-spacing:1.6px!important;font-weight:900!important}
+.sticky-phone strong{font-size:clamp(12px,3.2vw,16px)!important;line-height:1.15!important;letter-spacing:-.2px!important;white-space:nowrap!important}
+.sticky-phone .sticky-arrow{position:absolute!important;right:10px!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important;font-size:18px!important}
+@media(max-width:850px){.head-call{padding:8px 11px!important;gap:9px!important;min-height:44px!important}.head-call-icon{width:29px!important;height:29px!important;flex-basis:29px!important}.head-call-copy>span{font-size:7px!important}.head-call-copy strong{font-size:11px!important}.sticky-call{min-height:70px!important}.sticky-call b{font-size:12px!important}.sticky-call small{font-size:11px!important}.sticky-call>a.sticky-phone{min-height:52px!important}}
+@media(max-width:620px){
+ .header{gap:7px!important;padding:0 4%!important}
+ .logo{gap:7px!important;font-size:11px!important;letter-spacing:1.1px!important}
+ .logo-symbol{width:35px!important;height:35px!important;flex:0 0 35px!important}
+ .logo small{font-size:7px!important;letter-spacing:1.4px!important}
+ .head-call{margin:0 3px 0 auto!important;padding:6px 9px!important;gap:7px!important;min-height:40px!important;border-radius:999px!important}
+ .head-call-icon{width:27px!important;height:27px!important;flex-basis:27px!important}
+ .head-call-icon svg{width:14px!important;height:14px!important}
+ .head-call-copy>span{font-size:6px!important;letter-spacing:1px!important}
+ .head-call-copy strong{font-size:10px!important}
+ .menu{font-size:22px!important;flex:0 0 auto!important;color:#263128!important}
+ .car-visual{height:clamp(260px,72vw,340px)!important}
+ .car-card .car-img{padding:8px 10px!important}
+ .modal-photo{height:250px!important;min-height:250px!important}
+ .modal-photo img{padding:4px!important;object-fit:contain!important}
+ .sticky-call{min-height:76px!important;padding:9px 3% calc(9px + env(safe-area-inset-bottom))!important;gap:8px!important}
+ .sticky-call>div{flex:1 1 46%!important;gap:8px!important}
+ .sticky-call b{font-size:clamp(11px,3.1vw,13px)!important;line-height:1.25!important}
+ .sticky-call small{font-size:clamp(10px,2.8vw,12px)!important;line-height:1.25!important}
+ .sticky-call>a.sticky-phone{flex:0 1 51%!important;min-height:54px!important;padding:8px 25px 8px 10px!important}
+ .sticky-phone .sticky-label{font-size:8px!important;letter-spacing:1.3px!important}
+ .sticky-phone strong{font-size:clamp(11px,3.1vw,14px)!important;letter-spacing:-.3px!important}
+ .sticky-phone .sticky-arrow{right:8px!important;font-size:16px!important}
+}
+@media(max-width:370px){.logo{font-size:10px!important}.logo-symbol{width:32px!important;height:32px!important;flex-basis:32px!important}.head-call-copy{display:none!important}.head-call{padding:6px!important}.sticky-call b{font-size:10px!important}.sticky-call small{font-size:9px!important}.sticky-call>a.sticky-phone{flex-basis:52%!important}.sticky-phone strong{font-size:10.5px!important}}
