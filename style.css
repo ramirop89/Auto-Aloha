@@ -479,3 +479,86 @@ body{font-size:18px;line-height:1.72}
   .modal-photo #modalImage{width:100%!important;height:100%!important;object-fit:contain!important}
   .modal-body{padding:24px 22px 28px!important;overflow:visible!important}
 }
+
+/* MOBILE RESPONSIVE FIX — final override for narrow screens */
+@media (max-width: 620px) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  .header { padding: 0 18px!important; gap:10px!important; }
+  .header nav { display:none!important; }
+  .head-call { max-width:48vw!important; }
+  .hero { height: min(620px, 88svh)!important; min-height:520px!important; }
+  .hero-copy { left:6%!important; right:6%!important; top:9%!important; max-width:none!important; }
+  .hero h1 { letter-spacing:-2px!important; }
+  .benefits { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+  .benefit { border-right:0!important; padding:6px 2px!important; }
+  .fleet { padding:46px 18px 110px!important; }
+  .fleet-head { display:block!important; margin-bottom:22px!important; }
+  .fleet-head>p { margin-top:14px!important; max-width:none!important; }
+  .cars-grid { grid-template-columns:minmax(0,1fr)!important; gap:22px!important; }
+  .car-card { width:100%!important; min-width:0!important; border-radius:24px!important; }
+  .car-visual {
+    height:auto!important; min-height:0!important; aspect-ratio: 1.8 / 1!important;
+    background:#a5a3a7!important; border-radius:24px 24px 0 0!important;
+    overflow:hidden!important; position:relative!important;
+  }
+  .car-visual .car-img {
+    position:absolute!important; inset:0!important; display:block!important;
+    width:100%!important; height:100%!important; max-width:100%!important; max-height:100%!important;
+    object-fit:contain!important; object-position:center center!important;
+    padding:0!important; margin:0!important; border:0!important; border-radius:0!important;
+    background:transparent!important; box-shadow:none!important; filter:none!important; transform:none!important;
+  }
+  .category { left:14px!important; top:14px!important; padding:10px 14px!important; font-size:10px!important; }
+  .capacity { right:12px!important; top:12px!important; gap:5px!important; }
+  .capacity b { min-width:45px!important; padding:9px 10px!important; font-size:12px!important; }
+  .car-info { padding:20px!important; }
+  .model-line { align-items:flex-start!important; gap:12px!important; }
+  .model-line h3 { font-size:22px!important; line-height:1.2!important; }
+  .model-line p { font-size:14px!important; line-height:1.6!important; }
+  .price strong { font-size:25px!important; }
+  .price small { font-size:11px!important; }
+  .features { gap:7px!important; }
+  .features span { font-size:11px!important; padding:8px 10px!important; }
+  .details-btn { min-height:52px!important; font-size:14px!important; }
+  .sticky-call {
+    left:0!important; right:0!important; bottom:0!important; width:100%!important;
+    display:flex!important; align-items:center!important; justify-content:space-between!important;
+    gap:10px!important; min-height:0!important; padding:10px 12px calc(10px + env(safe-area-inset-bottom))!important;
+    box-sizing:border-box!important;
+  }
+  .sticky-call>div { min-width:0!important; flex:1 1 48%!important; }
+  .sticky-call b { display:block!important; font-size:11px!important; line-height:1.25!important; }
+  .sticky-call small { display:block!important; font-size:10px!important; line-height:1.3!important; }
+  .sticky-call>a.sticky-phone { flex:1 1 52%!important; width:auto!important; min-width:0!important; max-width:52%!important; min-height:48px!important; padding:7px 25px 7px 10px!important; }
+  .sticky-phone .sticky-label { font-size:7px!important; }
+  .sticky-phone strong { font-size:clamp(10px,3.1vw,13px)!important; white-space:nowrap!important; }
+  .banner { grid-template-columns:1fr!important; }
+  .banner-photo { min-height:260px!important; }
+  .banner-copy { padding:38px 24px!important; }
+  .steps { grid-template-columns:1fr!important; gap:22px!important; }
+  .contact { align-items:flex-start!important; flex-direction:column!important; padding:38px 24px!important; }
+  .contact-phone { min-width:0!important; padding-left:18px!important; }
+  .footer { flex-wrap:wrap!important; padding:24px 20px 120px!important; gap:16px!important; }
+  /* On phone, stack the modal vertically and keep the whole car visible against one continuous studio-gray field. */
+  .modal { padding:0!important; align-items:flex-start!important; }
+  .modal-box {
+    display:flex!important; flex-direction:column!important; width:100%!important; height:100svh!important;
+    max-height:100svh!important; min-height:0!important; margin:0!important; border-radius:0!important;
+    overflow-y:auto!important; overflow-x:hidden!important; grid-template-columns:none!important;
+  }
+  .modal-photo {
+    flex:0 0 auto!important; width:100%!important; height:auto!important; min-height:0!important;
+    aspect-ratio: 4 / 3!important; background:#a5a3a7!important; overflow:hidden!important;
+    display:flex!important; align-items:center!important; justify-content:center!important;
+    border-radius:0!important; padding:0!important;
+  }
+  .modal-photo #modalImage {
+    display:block!important; position:relative!important; width:100%!important; height:100%!important;
+    max-width:100%!important; max-height:100%!important; object-fit:contain!important;
+    object-position:center center!important; padding:0!important; margin:0!important;
+    border:0!important; border-radius:0!important; background:transparent!important;
+    box-shadow:none!important; filter:none!important;
+  }
+  .modal-body { flex:1 0 auto!important; padding:26px 22px calc(32px + env(safe-area-inset-bottom))!important; overflow:visible!important; }
+  .close-modal { position:fixed!important; top:calc(12px + env(safe-area-inset-top))!important; right:12px!important; z-index:100!important; }
+}
