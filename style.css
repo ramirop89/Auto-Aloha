@@ -562,3 +562,50 @@ body{font-size:18px;line-height:1.72}
   .modal-body { flex:1 0 auto!important; padding:26px 22px calc(32px + env(safe-area-inset-bottom))!important; overflow:visible!important; }
   .close-modal { position:fixed!important; top:calc(12px + env(safe-area-inset-top))!important; right:12px!important; z-index:100!important; }
 }
+
+
+/* FINAL VEHICLE IMAGE FIX — override legacy conflicting rules */
+.car-card .car-visual {
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  background: #aaa8ad !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.car-card .visual-pattern { display: none !important; }
+.car-card .car-visual .car-img {
+  position: absolute !important; inset: 0 !important;
+  display: block !important; width: 100% !important; height: 100% !important;
+  max-width: 100% !important; max-height: 100% !important;
+  object-fit: contain !important; object-position: center center !important;
+  padding: 0 !important; margin: 0 !important;
+  border: 0 !important; border-radius: 0 !important;
+  background: #aaa8ad !important; box-shadow: none !important;
+  filter: none !important; transform: none !important;
+}
+.car-card:hover .car-visual .car-img { transform: none !important; }
+.modal-photo {
+  position: relative !important; background: #aaa8ad !important;
+  overflow: hidden !important; display: flex !important;
+  align-items: center !important; justify-content: center !important;
+}
+.modal-photo::before { display: none !important; content: none !important; }
+.modal-photo #modalImage {
+  display: block !important; position: relative !important;
+  width: 100% !important; height: 100% !important;
+  max-width: 100% !important; max-height: 100% !important;
+  object-fit: contain !important; object-position: center center !important;
+  padding: 0 !important; margin: 0 !important;
+  border: 0 !important; border-radius: 0 !important;
+  background: #aaa8ad !important; box-shadow: none !important; filter: none !important;
+}
+@media (max-width: 620px) {
+  .car-card .car-visual { aspect-ratio: 16 / 9 !important; height: auto !important; }
+  .car-card .car-visual .car-img { object-fit: contain !important; }
+  .modal { padding: 0 !important; }
+  .modal-box { display: flex !important; flex-direction: column !important; width: 100% !important; height: 100svh !important; max-height: 100svh !important; overflow-y: auto !important; border-radius: 0 !important; }
+  .modal-photo { flex: 0 0 auto !important; width: 100% !important; height: auto !important; min-height: 0 !important; aspect-ratio: 16 / 9 !important; }
+  .modal-photo #modalImage { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+  .modal-body { flex: 1 0 auto !important; padding: 25px 22px calc(100px + env(safe-area-inset-bottom)) !important; overflow: visible !important; }
+}
