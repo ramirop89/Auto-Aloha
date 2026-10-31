@@ -640,3 +640,233 @@ body{font-size:18px;line-height:1.72}
  .modal-body { padding: 25px 22px calc(110px + env(safe-area-inset-bottom)) !important; }
  .close-modal { position: fixed !important; top: calc(12px + env(safe-area-inset-top)) !important; right: 12px !important; }
 }
+
+
+
+/* Unified full-bleed studio vehicle photography — no inset frames or crop. */
+.car-card .car-visual {
+  background:#aaa9ad !important;
+  aspect-ratio:16 / 9 !important;
+  height:auto !important; min-height:0 !important;
+  overflow:hidden !important;
+}
+.car-card .car-visual .visual-pattern { display:none !important; }
+.car-card .car-visual .car-img {
+  position:absolute !important; inset:0 !important;
+  display:block !important; width:100% !important; height:100% !important;
+  object-fit:cover !important; object-position:center center !important;
+  padding:0 !important; margin:0 !important;
+  border:0 !important; border-radius:0 !important;
+  background:transparent !important; box-shadow:none !important;
+  transform:none !important; filter:none !important;
+}
+.model-line h3 small { display:inline !important; font-size:.58em !important; font-weight:500 !important; color:#c3c9c1 !important; white-space:nowrap; margin-left:4px; }
+.modal-photo { background:#aaa9ad !important; overflow:hidden !important; }
+.modal-photo::before { display:none !important; }
+.modal-photo #modalImage {
+  position:absolute !important; inset:0 !important;
+  display:block !important; width:100% !important; height:100% !important;
+  object-fit:contain !important; object-position:center center !important;
+  padding:0 !important; margin:0 !important;
+  border:0 !important; border-radius:0 !important;
+  background:transparent !important; box-shadow:none !important; filter:none !important;
+}
+@media (max-width:850px) {
+  .car-card .car-visual { aspect-ratio:16 / 9 !important; height:auto !important; }
+  .modal-photo { height:clamp(300px,82vw,440px) !important; min-height:0 !important; aspect-ratio:auto !important; }
+  .modal-photo #modalImage { object-fit:contain !important; }
+}
+@media (max-width:620px) {
+  .car-card .car-visual { aspect-ratio:16 / 9 !important; height:auto !important; }
+  .modal-photo { height:clamp(300px,82vw,440px) !important; min-height:0 !important; aspect-ratio:auto !important; }
+}
+
+/* Updated Prius + Corolla photos: one continuous studio backdrop, full vehicle visible */
+.car-visual{background:#aaa8ac!important;overflow:hidden!important}
+.car-visual .visual-pattern{display:none!important}
+.car-card .car-img{inset:0!important;width:100%!important;height:100%!important;left:0!important;top:0!important;padding:0!important;object-fit:contain!important;object-position:center center!important;background:#aaa8ac!important;transform:none!important;filter:none!important}
+.car-card:hover .car-img{transform:none!important}
+.modal-photo{background:#aaa8ac!important;overflow:hidden!important;padding:0!important}
+.modal-photo img{display:block!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;object-position:center center!important;background:#aaa8ac!important;padding:0!important;filter:none!important}
+@media(max-width:620px){.modal-photo{height:260px!important;min-height:260px!important}.modal-photo img{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}}
+
+
+/* AUTO ALOHA — final unified vehicle-photo treatment for every card and detail view.
+   One continuous studio image: never crop the vehicle, never add an inset frame. */
+.car-card .car-visual {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  background: #aaa8ac !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.car-card .car-visual .visual-pattern { display: none !important; }
+.car-card .car-visual .car-img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #aaa8ac !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+.car-card:hover .car-visual .car-img,
+.car-card:focus-visible .car-visual .car-img {
+  transform: none !important;
+  filter: none !important;
+}
+.car-card .car-visual::before,
+.car-card .car-visual::after { content: none !important; display: none !important; }
+
+/* Detail overlay uses the same exact image ratio and studio-gray surface as cards. */
+.modal-photo {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #aaa8ac !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.modal-photo::before,
+.modal-photo::after { content: none !important; display: none !important; }
+.modal-photo #modalImage {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #aaa8ac !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+.modal-photo .category { z-index: 3 !important; }
+
+/* A properly aligned, consistently sized close control on desktop and touch screens. */
+.close-modal {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 20 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  border-radius: 50% !important;
+  transform: none !important;
+}
+@media (max-width: 850px) {
+  .modal-box {
+    display: block !important;
+    grid-template-columns: minmax(0,1fr) !important;
+    width: min(100%, 720px) !important;
+    height: auto !important;
+    max-height: 94svh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  .modal-photo {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .modal-photo #modalImage {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .modal-body { min-width: 0 !important; overflow: visible !important; }
+}
+@media (max-width: 620px) {
+  .car-card .car-visual {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .car-card .car-visual .car-img {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+  .modal {
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+  .modal-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 100svh !important;
+    min-height: 100svh !important;
+    border-radius: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  .modal-photo {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 0 !important;
+  }
+  .modal-photo #modalImage {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+  }
+  .close-modal {
+    position: absolute !important;
+    top: max(12px, env(safe-area-inset-top)) !important;
+    right: 12px !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+  }
+  .modal-body {
+    padding: 22px 20px calc(112px + env(safe-area-inset-bottom)) !important;
+  }
+}
