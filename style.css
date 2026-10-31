@@ -662,3 +662,23 @@ body{font-size:18px;line-height:1.72}
   background: #aaa8ad !important;
   filter: none !important;
 }
+
+
+/* Toyota photo restoration: exact older models, full-frame gray studio photos */
+.car-card .car-visual { aspect-ratio: 16 / 9 !important; height: auto !important; background: #b0aeb2 !important; overflow: hidden !important; }
+.car-card .car-visual .car-img { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:contain !important; object-position:center !important; padding:0 !important; background:transparent !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; filter:none !important; transform:none !important; }
+.car-card .visual-pattern, .car-card .card-view { display:none !important; }
+.modal-photo { background:#b0aeb2 !important; overflow:hidden !important; padding:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+.modal-photo::before, .modal-photo::after { display:none !important; content:none !important; }
+.modal-photo #modalImage { display:block !important; width:100% !important; height:100% !important; max-width:100% !important; max-height:100% !important; object-fit:contain !important; object-position:center !important; padding:0 !important; margin:0 !important; background:transparent !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; filter:none !important; }
+@media (max-width:620px) {
+ .car-card .car-visual { aspect-ratio:16 / 9 !important; height:auto !important; }
+ .modal-box { display:flex !important; flex-direction:column !important; }
+ .modal-photo { flex:0 0 auto !important; width:100% !important; height:auto !important; min-height:0 !important; aspect-ratio:4 / 5 !important; }
+ .modal-photo #modalImage { width:100% !important; height:100% !important; object-fit:contain !important; }
+}
+
+/* Corolla modal: keep the previously approved fleet cards; remove inset photo frame */
+.modal-photo{background:#9e9ca2!important;position:relative!important;overflow:hidden!important}
+.modal-photo img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center center!important;filter:none!important;border:0!important;border-radius:0!important}
+.modal-photo .category{z-index:2!important}
