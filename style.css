@@ -664,21 +664,278 @@ body{font-size:18px;line-height:1.72}
 }
 
 
-/* Toyota photo restoration: exact older models, full-frame gray studio photos */
-.car-card .car-visual { aspect-ratio: 16 / 9 !important; height: auto !important; background: #b0aeb2 !important; overflow: hidden !important; }
-.car-card .car-visual .car-img { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:contain !important; object-position:center !important; padding:0 !important; background:transparent !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; filter:none !important; transform:none !important; }
-.car-card .visual-pattern, .car-card .card-view { display:none !important; }
-.modal-photo { background:#b0aeb2 !important; overflow:hidden !important; padding:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
-.modal-photo::before, .modal-photo::after { display:none !important; content:none !important; }
-.modal-photo #modalImage { display:block !important; width:100% !important; height:100% !important; max-width:100% !important; max-height:100% !important; object-fit:contain !important; object-position:center !important; padding:0 !important; margin:0 !important; background:transparent !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; filter:none !important; }
-@media (max-width:620px) {
- .car-card .car-visual { aspect-ratio:16 / 9 !important; height:auto !important; }
- .modal-box { display:flex !important; flex-direction:column !important; }
- .modal-photo { flex:0 0 auto !important; width:100% !important; height:auto !important; min-height:0 !important; aspect-ratio:4 / 5 !important; }
- .modal-photo #modalImage { width:100% !important; height:100% !important; object-fit:contain !important; }
+/* Final consistency: "or similar" labels across every vehicle card and detail modal. */
+.similar-label{display:inline-block;margin-left:7px;color:#aeb5ac;font:500 .58em/1.2 "DM Sans",sans-serif;letter-spacing:0;vertical-align:middle;white-space:nowrap}
+.modal-similar{font-size:.48em;color:#7b8179;margin-left:8px}
+@media(max-width:620px){.similar-label{font-size:.55em;margin-left:5px}.modal-similar{font-size:.46em}}
+
+/* FINAL UNIFIED FLEET IMAGE PASS — same canvas, framing and studio tone for every vehicle */
+.car-card .car-visual{
+  aspect-ratio:16 / 9 !important;
+  height:auto !important;
+  min-height:0 !important;
+  background:#aca9ae !important;
+  overflow:hidden !important;
+}
+.car-card .car-visual .car-img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  padding:0 !important;
+  margin:0 !important;
+  background:transparent !important;
+  filter:none !important;
+  transform:none !important;
+}
+.car-card:hover .car-visual .car-img{transform:none !important}
+.car-card,.car-card:hover{
+  transition:none !important;
+  transform:none !important;
+}
+.modal,.modal.open,.modal-box,.modal-photo,.modal-photo #modalImage{
+  transition:none !important;
+  animation:none !important;
+}
+.modal-photo{background:#aca9ae !important}
+.modal-photo #modalImage{
+  object-fit:contain !important;
+  object-position:center center !important;
+  transform:none !important;
+}
+@media(max-width:620px){
+  .car-card .car-visual{aspect-ratio:16 / 9 !important;height:auto !important}
+  .car-card .car-visual .car-img{object-fit:contain !important}
 }
 
-/* Corolla modal: keep the previously approved fleet cards; remove inset photo frame */
-.modal-photo{background:#9e9ca2!important;position:relative!important;overflow:hidden!important}
-.modal-photo img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center center!important;filter:none!important;border:0!important;border-radius:0!important}
-.modal-photo .category{z-index:2!important}
+/* unified studio background: card and modal photos share one seamless backdrop */
+.car-visual{height:auto!important;aspect-ratio:16/9;background:linear-gradient(#b0b0b0 0 66%,#d0d0d0 66% 100%)!important}
+.visual-pattern{display:none!important}
+.car-card .car-img,.car-card:hover .car-img{filter:none!important}
+.car-card .car-img{left:0!important;top:0!important;width:100%!important;height:100%!important;object-fit:cover!important;padding:0!important}
+.card-view{color:#1d211d!important}
+.modal-box .modal-photo{background:linear-gradient(#b0b0b0 50%,#d0d0d0 50%)!important;aspect-ratio:auto!important;height:auto!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;align-self:stretch!important;overflow:hidden!important}
+.modal-box .modal-photo::before,.modal-box .modal-photo::after{display:none!important;content:none!important}
+.modal-box .modal-photo #modalImage{width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:16/9;object-fit:cover!important;padding:0!important;margin:0!important;filter:none!important;border-radius:0!important}
+@media(max-width:620px){.modal-box .modal-photo{aspect-ratio:16/9!important;flex:0 0 auto!important;width:100%!important}}
+
+/* === FINAL, authoritative car-photo rules: one seamless studio photo, no rectangles, no bands === */
+html body .cars-grid .car-card .car-visual{height:auto!important;min-height:0!important;aspect-ratio:2.4/1!important;background:#8d8e91!important;overflow:hidden!important;position:relative!important;padding:0!important}
+html body .cars-grid .car-card .car-visual .visual-pattern{display:none!important}
+html body .cars-grid .car-card .car-visual .car-img{position:absolute!important;inset:0!important;top:0!important;left:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center center!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:none!important;filter:none!important;box-shadow:none!important;transform:none!important}
+html body .cars-grid .car-card:hover .car-visual .car-img{transform:scale(1.025)!important}
+html body #carModal .modal-box .modal-photo{background:#8d8e91!important;background-image:none!important;position:relative!important;display:block!important;overflow:hidden!important;padding:0!important;margin:0!important;height:auto!important;min-height:0!important;align-self:stretch!important;aspect-ratio:auto!important}
+html body #carModal .modal-box .modal-photo::before,html body #carModal .modal-box .modal-photo::after{display:none!important;content:none!important}
+html body #carModal .modal-box .modal-photo #modalImage{position:absolute!important;inset:0!important;top:0!important;left:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center 59%!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:none!important;filter:none!important;box-shadow:none!important;transform:none!important}
+html body #carModal .modal-box .modal-photo .category{z-index:3!important}
+@media(max-width:850px){html body #carModal .modal-box .modal-photo{width:100%!important;aspect-ratio:4/3!important;flex:0 0 auto!important}}
+
+
+/* SCREENSHOT-MATCHED FLEET CARDS — November 2026 */
+.fleet {
+  background: #eee9df !important;
+  padding: 54px 2.05% 58px !important;
+}
+.fleet-head {
+  max-width: 1800px;
+  margin: 0 auto 28px !important;
+}
+.cars-grid {
+  width: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px 24px !important;
+  align-items: stretch;
+}
+.car-card,
+.car-card:hover,
+.car-card:focus-visible {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #202322 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.car-card .car-visual {
+  width: 100% !important;
+  height: clamp(210px, 13.55vw, 260px) !important;
+  aspect-ratio: auto !important;
+  min-height: 0 !important;
+  background: #aaa8ad !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.car-card .visual-pattern { display: none !important; }
+.car-card .car-visual .car-img {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #aaa8ad !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+.car-card:hover .car-visual .car-img { transform: none !important; }
+.car-card .category {
+  left: 24px !important;
+  top: 16px !important;
+  padding: 14px 20px !important;
+  border-radius: 32px !important;
+  font-size: 14px !important;
+  letter-spacing: 1px !important;
+  line-height: 1 !important;
+}
+.car-card .capacity {
+  top: 15px !important;
+  right: 22px !important;
+  gap: 10px !important;
+}
+.car-card .capacity b {
+  min-width: 76px !important;
+  padding: 15px 16px !important;
+  border-radius: 32px !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+  background: #ffffff35 !important;
+  color: #fff !important;
+}
+.car-card .card-view { display: none !important; }
+.car-card .car-info {
+  min-height: 92px !important;
+  padding: 9px 30px 11px !important;
+  background: #202322 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.car-card .model-line {
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+.car-card .model-line > div:first-child {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+.car-card .model-line h3 {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font: 800 clamp(25px, 2vw, 36px)/1.1 Manrope, sans-serif !important;
+  letter-spacing: -1.1px !important;
+}
+.car-card .model-line h3 .similar-label {
+  display: inline !important;
+  margin: 0 !important;
+  color: #c8cbc8 !important;
+  font: 500 clamp(12px, 1.1vw, 17px)/1.2 "DM Sans", sans-serif !important;
+  letter-spacing: 0 !important;
+}
+.car-card .model-line p {
+  max-width: none !important;
+  margin: 9px 0 0 !important;
+  color: #e0e2df !important;
+  font-size: clamp(13px, 1.1vw, 20px) !important;
+  line-height: 1.45 !important;
+}
+.car-card .price {
+  flex: 0 0 auto !important;
+  align-self: center !important;
+  text-align: right !important;
+}
+.car-card .price strong {
+  font: 800 clamp(34px, 2.8vw, 52px)/1 Manrope, sans-serif !important;
+  letter-spacing: -1.8px !important;
+  color: #fff !important;
+}
+.car-card .price small {
+  display: block !important;
+  margin-top: 8px !important;
+  color: #d8dbd8 !important;
+  font-size: clamp(12px, 1vw, 18px) !important;
+}
+.car-card .features,
+.car-card .details-btn { display: none !important; }
+.fleet .fineprint {
+  max-width: 1840px;
+  margin: 20px auto 0 !important;
+}
+@media (max-width: 900px) {
+  .fleet { padding: 46px 3% 52px !important; }
+  .cars-grid { gap: 16px !important; }
+  .car-card .car-info { padding: 12px 18px !important; }
+  .car-card .category { left: 14px !important; top: 13px !important; padding: 11px 14px !important; font-size: 11px !important; }
+  .car-card .capacity { right: 12px !important; top: 12px !important; gap: 6px !important; }
+  .car-card .capacity b { min-width: 54px !important; padding: 11px 10px !important; font-size: 13px !important; }
+  .car-card .model-line h3 { font-size: clamp(21px, 3vw, 28px) !important; }
+  .car-card .model-line p { font-size: 13px !important; }
+  .car-card .price strong { font-size: clamp(28px, 4vw, 38px) !important; }
+}
+@media (max-width: 620px) {
+  .fleet { padding: 38px 4% 44px !important; }
+  .cars-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 18px !important; }
+  .car-card { border-radius: 16px !important; }
+  .car-card .car-visual { height: auto !important; aspect-ratio: 16 / 9 !important; }
+  .car-card .car-visual .car-img { object-fit: cover !important; }
+  .car-card .car-info { min-height: 0 !important; padding: 14px 16px 16px !important; }
+  .car-card .model-line { align-items: center !important; gap: 10px !important; }
+  .car-card .model-line h3 { font-size: clamp(22px, 6vw, 28px) !important; gap: 7px !important; }
+  .car-card .model-line h3 .similar-label { font-size: 12px !important; }
+  .car-card .model-line p { margin-top: 7px !important; font-size: 13px !important; line-height: 1.4 !important; }
+  .car-card .price strong { font-size: 30px !important; }
+  .car-card .price small { margin-top: 5px !important; font-size: 12px !important; }
+  .car-card .category { left: 12px !important; top: 12px !important; padding: 10px 13px !important; font-size: 10px !important; }
+  .car-card .capacity { right: 10px !important; top: 10px !important; }
+  .car-card .capacity b { min-width: 48px !important; padding: 9px 8px !important; font-size: 12px !important; }
+}
+
+
+
+
+/* Prius card: preserve the full vehicle and the original studio floor. */
+.car-card[data-car="prius"] .car-visual {
+  background: #aaa9ae !important;
+}
+.car-card[data-car="prius"] .car-visual .prius-card-photo {
+  object-fit: contain !important;
+  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+  filter: none !important;
+}
+.car-card[data-car="prius"]:hover .car-visual .prius-card-photo {
+  transform: none !important;
+}
+
+
+/* Prius card now uses a wide crop from the exact modal reference photo. */
+.car-card[data-car="prius"] .car-visual .prius-card-photo {
+  object-fit: cover !important;
+  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+  filter: none !important;
+}
